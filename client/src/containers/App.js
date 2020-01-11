@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import '../views/css/styles.css'
 import '../App.css';
-
+import Home from '../components/Home'
+import About from '../components/About'
 class App extends Component {
+  
+  constructor(props) {
+    super(props) 
+    this.state = { data: "" }
+  }
+
+  callApi() {
+    fetch("https://lgapi-us.libapps.com/1.1/guides/577970?site_id=8488&key=0b8da796b00334ae3471f60e6a10e8c6")
+    .then(res => res.json())
+    .then(res => this.setState({ data: JSON.stringify(res) }))
+    .catch(err => console.log(err))
+  }
 
   componentDidMount() {
-    this.props.getData()
+    this.callApi()
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h2>Hello</h2>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+      
+          <Switch>
+            <Route exact path = '/about' component={About} />
+            <Route exact path = '/home' component={Home} />
+            
+          </Switch>
+        </div>
+      </Router>
     );
   }
   
