@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getData } from '../../actions/data_action'
+import { getData } from '../actions/data_action'
 
 
 class Data extends Component {
