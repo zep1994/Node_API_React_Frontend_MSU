@@ -1,0 +1,27 @@
+{
+  "name": "msu_web_dev_role",
+  "version": "1.0.0",
+  "description": "\"# Node_API_React_Frontend_MSU\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zep1994/Node_API_React_Frontend_MSU.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zep1994/Node_API_React_Frontend_MSU/issues"
+  },
+  "homepage": "https://github.com/zep1994/Node_API_React_Frontend_MSU#readme",
+  "devDependencies": {
+    "ejs": "^3.0.1",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
