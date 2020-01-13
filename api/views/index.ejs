@@ -1,10 +1,14 @@
-<head>
-  <link href="/css/index.css" rel="stylesheet" type="text/css">
+<%- include('./include/head') %>
 </head>
 
 <body>
-  
+  <%- include('./include/nav.ejs') %>
     <main>
+
+      <form action="/guides/<%= items.id %>">
+        <input type="text" name="id" />
+        <input type="submit" />
+      </form>
 
       <input type="radio" onclick="document.location='http://localhost:3001/guides/sortby/count_hit'" > Sort by count hit </input>
       <input type="radio" onclick="document.location='http://localhost:3001/guides/sortby/name'">Sort by Name </input>
@@ -25,7 +29,7 @@
                   </header>
 
                   <div class="card__content">
-                    ID: <a href=<% link %>><%= items[i].id %></a> <br />
+                    ID: <a href="/guides/<%= items[i].id %>"><%= items[i].id %></a> <br />
                     MSU URL:<a href=<%= items[i].url %> ><%= items[i].url %></a>
                 </div>
                 <div class="card__actions">
@@ -36,6 +40,9 @@
       <% } %>
 
 
-      </table>
     </main>
 </body>
+
+<%- include('./include/footer.ejs') %>
+
+<%- include('./include/end.ejs') %>

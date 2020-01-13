@@ -1,0 +1,24 @@
+<%- include('./include/head') %>
+</head>
+
+<body>
+    <%- include('./include/nav.ejs') %>
+        <main>
+            <div>
+                Most Recently Updated:
+                <% for(var i=0; i < item.length; i++) { %>
+                    <div class="grid">
+                        <article class="card product-item">
+        
+            
+                            <div class="card__content">
+                                ID: <a href="/guides/<%= item[i].id %>"><%= item[i].id %></a> <br />
+                                MSU URL:<a href=<%= item[i].url %> ><%= item[i].url %></a>
+                            </div>
+                            <div class="card__actions">
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+                <% } %>
+            </div>
