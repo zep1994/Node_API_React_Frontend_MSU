@@ -5,9 +5,9 @@
   <%- include('./include/nav.ejs') %>
     <main>
 
-      <form action="/guides/<%= items.id %>">
-        <input type="text" name="id" />
-        <input type="submit" />
+      <form class="form" action="/guides/<%= items.id %>">
+        <input type="text" class="input" name="id" />
+        <input type="submit" class="btn" />
       </form>
 
       <input type="radio" onclick="document.location='http://localhost:3001/guides/sortby/count_hit'" > Sort by count hit </input>
