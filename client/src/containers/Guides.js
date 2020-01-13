@@ -1,24 +1,49 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
 import GuideCard from '../components/GuideCard'
-import { getData } from '../actions/data_action'
-
 
 class Guides extends Component {
-    
-    render() {
-        return (
-            <div className="GuidesContainer">
-                {this.props.guides.map(guide => <GuideCard key={guide.id} guide={guide} />)}
-            </div>
-        )
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            items: [],
+            item: [],
+            isLoaded: false,
+            readNow: [],
+            id: "",
+        }
     }
-}
 
-const mapStateToProps = (state) => {
-    return ({
-        guides: state.guides
-    })
-}
+    componentDidMount() {
+        fetch('http://localhost:3001/guides', {
+            headers : {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+            }
+        })
+        .then(res => {
+            console.log(res)
+            return res.json()})
+        .then(json => {
+            this.setState({
+            isLoaded: true,
+            items: json,
+        
+            })
+        })
+    }
 
-export default connect(mapStateToProps, { getData })(Guides)
+
+render() {
+        return (
+        <div>
+        <ul>
+            {this.state.items.map(item => (
+                <GuideCard id={item.id}  key={item.id} url={item.url} name={item.name}/>
+            ))}
+        </ul>
+        </div>
+        )
+    }}
+
+export default Guides

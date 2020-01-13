@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import GuidePage from './guidePage'
 
-const GuideCard = ({guide}) => (
-    <Link to={`/${guide.id}`} exact >
-        <div key={guide.id} className="GuideCard">
-            <h3>{guide.name}</h3>
-        </div>
-    </Link>
+
+const GuideCard = (props) => (
+            <Link to={`/guides/${props.id}`} exact="true">
+                <div key={props.id} className="GuideCard">
+                {props.name}
+                {props.url}
+                </div>
+            </Link>
 )
 
 export default GuideCard
