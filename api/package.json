@@ -1,6 +1,7 @@
 {
   "name": "msu_web_dev_role",
   "version": "1.0.0",
+  "proxy": "http://localhost:3000",
   "description": "\"# Node_API_React_Frontend_MSU\"",
   "main": "index.js",
   "scripts": {
@@ -22,6 +23,8 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "axios": "^0.19.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "request": "^2.88.0"
