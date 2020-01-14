@@ -4,4 +4,9 @@
 <body>
     <%- include('./include/nav.ejs') %>
         <main>
-            About Page
+            <div id="homepage" :class="[heroHeightSet ? '' : 'uninitialized']" v-cloak>
+                <div class="hero d-flex flex-column justify-content-center" full-page-hero>
+                    <div class="container text-center">
+                    <h1 class="display-4">The <strong>MSU</strong> Chronicles</h1>
+                    <h2>The About Page</h2>
+                    <p class="about">We are committed to Mississippi State University's overall goals of teaching, research, and service, and to making MSU Libraries "The Place" with the facilities, <br />services, resources, assistance, and support that you need.</p>

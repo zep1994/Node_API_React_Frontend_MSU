@@ -10,30 +10,19 @@
         <input type="submit" class="btn" />
       </form>
 
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/sortby/count_hit'" > Sort by count hit </input>
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/sortby/name'">Sort by Name </input>
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/sortby/published'" > Sort by count hit </input>
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/sortby/relevance'">Sort by Name </input>
-
-
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/guide_types/Course'" > Sort by Course </input>
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/guide_types/General'">Sort by General </input>
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/guide_types/Subject'">Sort by Subject </input>
-      <input type="radio" onclick="document.location='http://localhost:3001/guides/guide_types/Topic'">Sort by Topic </input>
 
           <% for(var i=0; i < items.length; i++) { %>
             <div class="grid">
                 <article class="card product-item">
                   <header class="card__header">
-                    Name: <%= items[i].name %><br />
+                   <strong>Name: <%= items[i].name %><br /></strong> 
                   </header>
 
                   <div class="card__content">
-                    ID: <a href="/guides/<%= items[i].id %>"><%= items[i].id %></a> <br />
-                    MSU URL:<a href=<%= items[i].url %> ><%= items[i].url %></a>
+                    <strong>ID: <a href="/guides/<%= items[i].id %>"><%= items[i].id %></a> <br /></strong>
+                    <strong>MSU URL:<a href=<%= items[i].url %> ><%= items[i].url %></a></strong>
                 </div>
                 <div class="card__actions">
-                  <button class="btn">Add to Cart</button>
               </div>
           </article>
         </div>
