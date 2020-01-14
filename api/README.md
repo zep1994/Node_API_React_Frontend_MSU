@@ -3,8 +3,8 @@
 Notes
 *****************************************
 
-Front-end: React
-Back-end: NodeJS
+NodeJS
+EJS
 
 # MSU Developer Role    
 
